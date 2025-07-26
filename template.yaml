@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: EC2 Start/Stop Controller
+
+Globals:
+  Function:
+    Timeout: 30
+    Runtime: python3.9
+    MemorySize: 128
+
+Resources:
+  EC2ControllerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: ec2_controller.lambda_handler
+      CodeUri: src/
+      Description: Start or Stop EC2 based on input
+      Environment:
+        Variables:
+          INSTANCE_ID: i-08219b04f0f2c7e37  # <-- Replace with your EC2 actual instance ID
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - ec2:StartInstances
+                - ec2:StopInstances
+              Resource: "*"  # You can restrict to specific instance ARN if needed
