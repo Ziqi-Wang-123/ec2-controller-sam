@@ -36,6 +36,12 @@ During the guided deployment, you'll be prompted to:
 * Confirm the capabilities
 * Set environment variables (e.g. INSTANCE_ID)
 
+
+
+<img width="1137" height="585" alt="Screenshot 2025-07-28 at 11 09 46 AM" src="https://github.com/user-attachments/assets/a3a1fe42-4eaf-4e4e-a251-e2c47893c352" />
+
+
+
 ## Test After Deployment (AWS Console)
 
 * Go to AWS Lambda Console → find your deployed function.
